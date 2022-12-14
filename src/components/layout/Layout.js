@@ -10,6 +10,7 @@ import Container from "react-bootstrap/Container";
 import Home from "../home/Home";
 import Contact from "../contact/Contact";
 import Login from "../login/Login";
+import Detail from "../detail/Detail";
 
 function Layout() {
   return (
@@ -36,6 +37,7 @@ function Layout() {
       <Container>
         <Routes>
           <Route path="/" exact element={<Home />} />
+          <Route path="/detail/:id" exact element={<Detail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
         </Routes>

@@ -1,6 +1,6 @@
 import "./App.scss";
 import Layout from "./components/layout/Layout";
-import ExampleItem from "./components/items/Items";
+import ProductList from "./components/product/ProductList";
 
 function App() {
   return <Layout />;
