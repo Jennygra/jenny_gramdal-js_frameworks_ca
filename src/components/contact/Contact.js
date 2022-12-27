@@ -7,7 +7,7 @@ const schema = yup.object().shape({
     .string()
     .required("Please enter your name")
     .min(3, "Minimum 3 characters"),
-  lirstName: yup
+  lastName: yup
     .string()
     .required("Please enter your name")
     .min(4, "Minimum 4 characters"),
