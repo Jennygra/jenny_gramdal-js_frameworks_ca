@@ -6,11 +6,11 @@ const schema = yup.object().shape({
   firstName: yup
     .string()
     .required("Please enter your name")
-    .min(3, "Last name must be minimum 3 characters"),
+    .min(3, "Minimum 3 characters"),
   lirstName: yup
     .string()
     .required("Please enter your name")
-    .min(4, "Last name must be minimum 4 characters"),
+    .min(4, "Minimum 4 characters"),
   email: yup
     .string()
     .required("Please enter an email address")
