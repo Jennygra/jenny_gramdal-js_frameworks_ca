@@ -49,6 +49,7 @@ function Detail() {
     <>
       <h4>{product.name}</h4>
       <p>ID: {product.id}</p>
+      <p>{product.description}</p>
     </>
   );
 }
