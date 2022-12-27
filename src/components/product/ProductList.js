@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { API } from "../../constants/api";
 
 function ProductList() {
@@ -34,15 +35,13 @@ function ProductList() {
     return <div>ERROR: An error occured</div>;
   }
 
-  console.log(products.map((product) => product.images));
-
   return (
     <>
       {products.map((product) => (
-        <a key={product.id}>
-          <img src={product.images.src} alt={product.images.alt} />
-          <p>{product.name}</p>
-        </a>
+        <Link to={`detail/${product.id}`} key={product.id}>
+          <h4>{product.name}</h4>
+          <p>ID: {product.id}</p>
+        </Link>
       ))}
     </>
   );
