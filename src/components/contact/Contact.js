@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Form } from "react-bootstrap";
 
 const schema = yup.object().shape({
   firstName: yup
@@ -38,7 +39,8 @@ function Contact() {
   console.log(errors);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <h2>Contact us</h2>
       <label>
         First Name*
         <input {...register("firstName", { required: true })} />
@@ -59,8 +61,10 @@ function Contact() {
 
       <label>
         Subject*
-        <select {...register("subject", { required: true })}>
+        <select name="subject" {...register("subject", { required: true })}>
+          <option hidden selected label=" "></option>
           <option value="product">Product</option>
+          <option value="service">Service</option>
           <option value="support">Support</option>
         </select>
         {errors.subject && <span>{errors.subject.message}</span>}
@@ -73,7 +77,7 @@ function Contact() {
       </label>
 
       <button>Send</button>
-    </form>
+    </Form>
   );
 }
 
