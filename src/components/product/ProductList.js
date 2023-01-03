@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { API } from "../../constants/api";
+import { BASE_URL, PRODUCT_PATH } from "../../constants/api";
+
+const productApi = BASE_URL + PRODUCT_PATH;
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -10,11 +12,10 @@ function ProductList() {
   useEffect(() => {
     (async function fetchData() {
       try {
-        const response = await fetch(API);
+        const response = await fetch(productApi);
 
         if (response.ok) {
           const json = await response.json();
-          console.log(json);
           setProducts(json);
         } else {
           setError("An error occured");

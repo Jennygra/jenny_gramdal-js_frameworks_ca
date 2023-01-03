@@ -36,8 +36,6 @@ function Contact() {
     console.log(data);
   }
 
-  console.log(errors);
-
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <h2>Contact us</h2>

@@ -11,6 +11,7 @@ import Home from "../home/Home";
 import Contact from "../contact/Contact";
 import Login from "../login/Login";
 import Detail from "../detail/Detail";
+import Admin from "../admin/Admin";
 
 function Layout() {
   return (
@@ -40,6 +41,7 @@ function Layout() {
           <Route path="/detail/:id" exact element={<Detail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </Container>
     </Router>

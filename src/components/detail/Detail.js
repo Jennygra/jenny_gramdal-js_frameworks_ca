@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { API } from "../../constants/api";
+import { BASE_URL, PRODUCT_PATH } from "../../constants/api";
+
+const productApi = BASE_URL + PRODUCT_PATH;
 
 function Detail() {
   const [product, setProducts] = useState(null);
@@ -15,7 +17,7 @@ function Detail() {
     navigate.push("/");
   }
 
-  const url = API + "/" + id;
+  const url = productApi + "/" + id;
 
   useEffect(() => {
     (async function fetchData() {
@@ -24,7 +26,6 @@ function Detail() {
 
         if (response.ok) {
           const json = await response.json();
-          console.log(json);
           setProducts(json);
         } else {
           setError("An error occured");
