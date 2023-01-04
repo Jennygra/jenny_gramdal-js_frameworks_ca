@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -24,10 +25,13 @@ const schema = yup.object().shape({
 });
 
 function Contact() {
+  const [submitSuccessful, setSubmit] = useState(false);
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitSuccessful },
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -36,9 +40,19 @@ function Contact() {
     console.log(data);
   }
 
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      setSubmit(true);
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
+
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <h2>Contact us</h2>
+      {submitSuccessful && (
+        <div>Thank you, the form was succesfully submitted</div>
+      )}
       <fieldset>
         <Form.Group>
           <Form.Label>First Name*</Form.Label>
