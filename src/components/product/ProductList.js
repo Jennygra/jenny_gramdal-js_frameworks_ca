@@ -42,7 +42,7 @@ function ProductList() {
   return (
     <>
       {products.map((product, index) => (
-        <Card>
+        <Card className="productCards-item">
           <Link to={`detail/${product.id}`} key={product.id}>
             <Card.Img
               variant="top"

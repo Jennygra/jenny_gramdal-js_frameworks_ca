@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Form, Button } from "react-bootstrap";
+import Heading from "../layout/Heading";
 
 const schema = yup.object().shape({
   firstName: yup
@@ -49,7 +50,7 @@ function Contact() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <h2>Contact us</h2>
+      <Heading title="Contact us" />
       {submitSuccessful && (
         <div>Thank you, the form was succesfully submitted</div>
       )}

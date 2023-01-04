@@ -7,6 +7,7 @@ import axios from "axios";
 import { BASE_URL, TOKEN_PATH } from "../../constants/api";
 import AuthContext from "../../context/AuthContext/authContext";
 import { Form, Button } from "react-bootstrap";
+import Heading from "../layout/Heading";
 
 const url = BASE_URL + TOKEN_PATH;
 
@@ -49,7 +50,9 @@ function Login() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <h2>Login</h2>
+      <Heading title="Login" />
+      <br />
+
       {loginError && <div>Login failed; Invalid username or password.</div>}
       <fieldset disabled={submitting}>
         <Form.Group>
