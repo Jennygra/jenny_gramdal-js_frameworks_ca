@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { BASE_URL, TOKEN_PATH } from "../../constants/api";
 import AuthContext from "../../context/AuthContext/authContext";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 const url = BASE_URL + TOKEN_PATH;
 
@@ -69,7 +69,9 @@ function Login() {
           {errors.password && <div>{errors.password.message}</div>}
         </Form.Group>
         <br />
-        <button>{submitting ? "Logging in..." : "Login"}</button>
+        <Button variant="dark" type="submit">
+          {submitting ? "Logging in..." : "Login"}
+        </Button>
       </fieldset>
     </Form>
   );

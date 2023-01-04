@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 const schema = yup.object().shape({
   firstName: yup
@@ -53,27 +53,37 @@ function Contact() {
       {submitSuccessful && (
         <div>Thank you, the form was succesfully submitted</div>
       )}
+      <br />
+
       <fieldset>
         <Form.Group>
-          <Form.Label>First Name*</Form.Label>
-          <Form.Control {...register("firstName", { required: true })} />
+          <Form.Control
+            placeholder="First Name"
+            {...register("firstName", { required: true })}
+          />
           {errors.firstName && <span>{errors.firstName.message}</span>}
         </Form.Group>
+        <br />
 
         <Form.Group>
-          <Form.Label>Last Name*</Form.Label>
-          <Form.Control {...register("lastName", { required: true })} />
+          <Form.Control
+            placeholder="Last Name"
+            {...register("lastName", { required: true })}
+          />
           {errors.lastName && <span>{errors.lastName.message}</span>}
         </Form.Group>
+        <br />
 
         <Form.Group>
-          <Form.Label>Email*</Form.Label>
-          <Form.Control {...register("email", { required: true })} />
+          <Form.Control
+            placeholder="Email"
+            {...register("email", { required: true })}
+          />
           {errors.email && <span>{errors.email.message}</span>}
         </Form.Group>
+        <br />
 
         <Form.Group>
-          <Form.Label>Subject*</Form.Label>
           <Form.Control
             as="select"
             name="subject"
@@ -90,18 +100,21 @@ function Contact() {
           </Form.Control>
           {errors.subject && <span>{errors.subject.message}</span>}
         </Form.Group>
+        <br />
 
         <Form.Group>
-          <Form.Label>Message*</Form.Label>
           <Form.Control
             as="textarea"
             rows={3}
+            placeholder="Message"
             {...register("message", { required: true })}
           />
           {errors.message && <span>{errors.message.message}</span>}
         </Form.Group>
         <br />
-        <button>Send</button>
+        <Button variant="dark" type="submit">
+          Send
+        </Button>
       </fieldset>
     </Form>
   );
