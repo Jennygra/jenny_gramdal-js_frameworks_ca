@@ -37,22 +37,18 @@ function ProductList() {
     return <div>ERROR: An error occured</div>;
   }
 
-  console.log(products[0].images[0].src);
-
   return (
     <>
-      {products.map((product, index) => (
+      {products.map((product) => (
         <Card className="productCards-item">
           <Link to={`detail/${product.id}`} key={product.id}>
             <Card.Img
               variant="top"
-              src={product.images.src}
-              alt={product.images.alt}
+              src={product.images[0].src}
+              alt={product.images[0].alt}
             />
             <Card.Body>
               <Card.Title>{product.name}</Card.Title>
-              <Card.Text>ID: {product.id}</Card.Text>
-              <Card.Text>Index: {index}</Card.Text>
             </Card.Body>
           </Link>
         </Card>

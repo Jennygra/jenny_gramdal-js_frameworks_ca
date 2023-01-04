@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { BASE_URL, PRODUCT_PATH } from "../../constants/api";
+import Heading from "../layout/Heading";
+import { Image } from "react-bootstrap";
 
 const productApi = BASE_URL + PRODUCT_PATH;
 
@@ -48,8 +50,15 @@ function Detail() {
 
   return (
     <>
-      <h4>{product.name}</h4>
-      <p>ID: {product.id}</p>
+      <Heading title={product.name} />
+      <br />
+      <Image
+        width="100%"
+        src={product.images[0].src}
+        alt={product.images[0].alt}
+      />
+      <br />
+      <br />
       <p>{product.description}</p>
     </>
   );
