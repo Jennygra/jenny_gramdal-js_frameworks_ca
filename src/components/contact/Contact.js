@@ -39,42 +39,56 @@ function Contact() {
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <h2>Contact us</h2>
-      <label>
-        First Name*
-        <input {...register("firstName", { required: true })} />
-        {errors.firstName && <span>{errors.firstName.message}</span>}
-      </label>
+      <fieldset>
+        <Form.Group>
+          <Form.Label>First Name*</Form.Label>
+          <Form.Control {...register("firstName", { required: true })} />
+          {errors.firstName && <span>{errors.firstName.message}</span>}
+        </Form.Group>
 
-      <label>
-        Last Name*
-        <input {...register("lastName", { required: true })} />
-        {errors.lastName && <span>{errors.lastName.message}</span>}
-      </label>
+        <Form.Group>
+          <Form.Label>Last Name*</Form.Label>
+          <Form.Control {...register("lastName", { required: true })} />
+          {errors.lastName && <span>{errors.lastName.message}</span>}
+        </Form.Group>
 
-      <label>
-        Email*
-        <input {...register("email", { required: true })} />
-        {errors.email && <span>{errors.email.message}</span>}
-      </label>
+        <Form.Group>
+          <Form.Label>Email*</Form.Label>
+          <Form.Control {...register("email", { required: true })} />
+          {errors.email && <span>{errors.email.message}</span>}
+        </Form.Group>
 
-      <label>
-        Subject*
-        <select name="subject" {...register("subject", { required: true })}>
-          <option hidden selected label=" "></option>
-          <option value="product">Product</option>
-          <option value="service">Service</option>
-          <option value="support">Support</option>
-        </select>
-        {errors.subject && <span>{errors.subject.message}</span>}
-      </label>
+        <Form.Group>
+          <Form.Label>Subject*</Form.Label>
+          <Form.Control
+            as="select"
+            name="subject"
+            {...register("subject", { required: true })}
+          >
+            <option
+              hidden
+              selected
+              label="Open this to select a subject"
+            ></option>
+            <option value="product">Product</option>
+            <option value="service">Service</option>
+            <option value="support">Support</option>
+          </Form.Control>
+          {errors.subject && <span>{errors.subject.message}</span>}
+        </Form.Group>
 
-      <label>
-        Message*
-        <textarea {...register("message", { required: true })} />
-        {errors.message && <span>{errors.message.message}</span>}
-      </label>
-
-      <button>Send</button>
+        <Form.Group>
+          <Form.Label>Message*</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
+            {...register("message", { required: true })}
+          />
+          {errors.message && <span>{errors.message.message}</span>}
+        </Form.Group>
+        <br />
+        <button>Send</button>
+      </fieldset>
     </Form>
   );
 }

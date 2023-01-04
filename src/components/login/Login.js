@@ -34,8 +34,6 @@ function Login() {
     setSubmitting(true);
     setLoginError(null);
 
-    console.log(data);
-
     try {
       const response = await axios.post(url, data);
       setAuth(response.data);
@@ -52,7 +50,7 @@ function Login() {
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <h2>Login</h2>
-      {loginError && <div>{loginError}</div>}
+      {loginError && <div>Login failed; Invalid username or password.</div>}
       <fieldset disabled={submitting}>
         <Form.Group>
           <Form.Control
@@ -61,7 +59,7 @@ function Login() {
           />
           {errors.username && <div>{errors.username.message}</div>}
         </Form.Group>
-
+        <br />
         <Form.Group>
           <Form.Control
             {...register("password", { required: true })}
@@ -70,6 +68,7 @@ function Login() {
           />
           {errors.password && <div>{errors.password.message}</div>}
         </Form.Group>
+        <br />
         <button>{submitting ? "Logging in..." : "Login"}</button>
       </fieldset>
     </Form>

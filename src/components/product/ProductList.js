@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BASE_URL, PRODUCT_PATH } from "../../constants/api";
+import { Card } from "react-bootstrap";
 
 const productApi = BASE_URL + PRODUCT_PATH;
 
@@ -36,13 +37,25 @@ function ProductList() {
     return <div>ERROR: An error occured</div>;
   }
 
+  console.log(products[0].images[0].src);
+
   return (
     <>
-      {products.map((product) => (
-        <Link to={`detail/${product.id}`} key={product.id}>
-          <h4>{product.name}</h4>
-          <p>ID: {product.id}</p>
-        </Link>
+      {products.map((product, index) => (
+        <Card>
+          <Link to={`detail/${product.id}`} key={product.id}>
+            <Card.Img
+              variant="top"
+              src={product.images.src}
+              alt={product.images.alt}
+            />
+            <Card.Body>
+              <Card.Title>{product.name}</Card.Title>
+              <Card.Text>ID: {product.id}</Card.Text>
+              <Card.Text>Index: {index}</Card.Text>
+            </Card.Body>
+          </Link>
+        </Card>
       ))}
     </>
   );
