@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BASE_URL, PRODUCT_PATH } from "../../constants/api";
-import { Card } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 
 const productApi = BASE_URL + PRODUCT_PATH;
 
@@ -40,18 +40,22 @@ function ProductList() {
   return (
     <>
       {products.map((product) => (
-        <Card className="productCards-item">
-          <Link to={`detail/${product.id}`} key={product.id}>
-            <Card.Img
-              variant="top"
-              src={product.images[0].src}
-              alt={product.images[0].alt}
-            />
-            <Card.Body>
-              <Card.Title>{product.name}</Card.Title>
-            </Card.Body>
-          </Link>
-        </Card>
+        <Col>
+          <Card className="productCards-item" style={{ width: "18rem" }}>
+            <Link to={`detail/${product.id}`} key={product.id}>
+              <div className="productCards-img_container">
+                <Card.Img
+                  variant="top"
+                  src={product.images[0].src}
+                  alt={product.images[0].alt}
+                />
+              </div>
+              <Card.Body>
+                <Card.Title>{product.name}</Card.Title>
+              </Card.Body>
+            </Link>
+          </Card>
+        </Col>
       ))}
     </>
   );
