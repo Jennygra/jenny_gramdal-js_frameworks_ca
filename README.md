@@ -56,7 +56,7 @@ Password: admin1238!
 
 ## Hosted Demo
 
-[Demo-link](https://cheerful-treacle-21b1ed.netlify.app)
+[Demo-link](https://playful-croissant-e2cc6d.netlify.app)
 
 ## Contact
 
