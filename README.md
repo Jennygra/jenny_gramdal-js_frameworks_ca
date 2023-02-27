@@ -1,12 +1,47 @@
-# Getting Started with Create React App
+# JS Frameworks CA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://www.linkpicture.com/q/Skjermbilde-2023-02-27-kl.09.57.23.png)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+The project involves creating a React or Next.js app with login functionality using Wordpress or Strapi installation with a REST or GraphQL API for API calls. It needs various paths like "/", "/detail/:param", "/contact", "/login", and "/admin," and should display an array of items with at least two properties and a single item fetched by a parameter. Upon successful login, the login form should redirect the user to the admin route. There should be a heading called "Admin" on the admin page. The project will be assessed using provided login credentials.
 
-### `npm start`
+## Built With
+
+- [Wordpress](https://wordpress.org)
+- [RestAPI](https://wordpress.org/plugins/headless-mode/)
+- [React.js](https://reactjs.org/)
+- [Hookform](https://react-hook-form.com)
+- [Router](https://reactrouter.com/en/main)
+- [Jest](https://jestjs.io)
+- [Sass](https://sass-lang.com)
+- [Axios](https://axios-http.com/docs/intro)
+- [Bootstrap](https://getbootstrap.com)
+- [Yup](https://www.npmjs.com/package/yup)
+
+## Getting Started
+
+### Installing
+
+1. Clone the repo:
+
+```bash
+git clone git@github.com:Jennygra/jenny_gramdal-js_frameworks_ca
+```
+
+2. Install the dependencies:
+
+```
+npm install
+```
+
+### Running
+
+To run the app, run the following commands:
+
+```bash
+npm run start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,57 +49,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+## Login
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Username: admin
+Password: admin1238!
 
-### `npm run build`
+## Hosted Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Demo-link](https://cheerful-treacle-21b1ed.netlify.app)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contact
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Portfolio](https://comforting-parfait-fe7cbf.netlify.app/index.html)
 
-### `npm run eject`
+[Twitter](https://twitter.com/jennyjen_gra)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[LinkedIn](https://www.linkedin.com/in/jenny-gramdal-6b904420a)
